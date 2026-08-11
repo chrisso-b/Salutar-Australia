@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salutar Australia — Natural Soy Candles</title>
+<meta name="description" content="Salutar Australia — a single, considered soy wax candle, hand poured in Melbourne.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ─── CSS Variables ─────────────────────────────── */
+  :root {
+    --charcoal:    #25291c;
+    --wine:        #6d1f1d;
+    --blush:       #f6bbb3;
+    --steel:       #95acb2;
+    --cream:       #efe9d2;
+    --cream-dark:  #e5ddc5;
+    --text:        #25291c;
+    --text-light:  #5a5e4f;
+    --font-display: 'Cormorant SC', serif;
+    --font-serif:   'Cormorant Garamond', serif;
+    --font-sans:    'Jost', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--wine);
+    font-weight: 500;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--charcoal);
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 6vw;
+  }
+
+  section { position: relative; }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--wine);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* ─── Quandong motif ─────────────────────────────── */
+  .sprig {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.9;
+    user-select: none;
+  }
+
+  /* ─── Nav ─────────────────────────────── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(239, 233, 210, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(37, 41, 28, 0.12);
+  }
+
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .nav-logo img {
+    height: 26px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.6rem;
+    list-style: none;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: 0;
+    height: 1px;
+    background: var(--wine);
+    transition: right 0.28s ease;
+  }
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after { right: 0; }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+  .nav-sprig img {
+    display: block;
+    width: 26px;
+    opacity: 0.85;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-toggle span {
+    width: 22px;
+    height: 1.5px;
+    background: var(--charcoal);
+    display: block;
+  }
+
+  /* ─── Hero ─────────────────────────────── */
+  .hero {
+    padding: 5.5rem 0 4.5rem;
+    overflow: hidden;
+  }
+
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4vw;
+    align-items: center;
+  }
+
+  .hero-logo {
+    max-width: 380px;
+    width: 90%;
+    margin-bottom: 1.9rem;
+  }
+
+  .hero-copy .eyebrow { margin-bottom: 1.1rem; display: block; }
+
+  .hero-tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.28rem;
+    color: var(--text-light);
+    max-width: 30ch;
+    margin: 0 0 2.2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.95rem 2.1rem;
+    border: 1px solid var(--charcoal);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .btn:hover, .btn:focus-visible {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+  .btn.primary {
+    background: var(--wine);
+    border-color: var(--wine);
+    color: var(--cream);
+  }
+  .btn.primary:hover, .btn.primary:focus-visible {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+  }
+
+  .hero-visual {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    max-width: 440px;
+    margin-left: auto;
+  }
+  .hero-visual .frame {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba(37, 41, 28, 0.35);
+    position: relative;
+    z-index: 1;
+  }
+  .hero-visual img.candle {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-visual .sprig {
+    width: 100px;
+    top: -34px;
+    right: -28px;
+    transform: rotate(8deg);
+    z-index: 0;
+  }
+
+  /* ─── section shared ─────────────────────────────── */
+  .section {
+    padding: 5.5rem 0;
+  }
+  .section.alt {
+    background: var(--cream-dark);
+  }
+
+  .section-head {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 3.2rem;
+  }
+  .section-head .eyebrow { display: block; margin-bottom: 0.7rem; }
+  .section-head h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.9rem;
+  }
+  .section-head p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+
+  /* ─── About ─────────────────────────────── */
+  .about .wrap {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 5vw;
+    align-items: center;
+  }
+  .about-media {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    max-width: 440px;
+  }
+  .about-media .frame {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .about-media img { width: 100%; }
+  .about-media .sprig {
+    width: 80px;
+    left: -36px;
+    bottom: -30px;
+    transform: rotate(-14deg);
+    z-index: 0;
+    opacity: 0.95;
+  }
+
+  .about-copy .eyebrow { display: block; margin-bottom: 0.9rem; }
+  .about-copy h2 {
+    font-size: 2.35rem;
+    margin-bottom: 1.3rem;
+    line-height: 1.15;
+  }
+  .about-copy p {
+    color: var(--text-light);
+    margin-bottom: 1.1rem;
+    max-width: 46ch;
+  }
+  .about-copy p:last-of-type { margin-bottom: 0; }
+  .about-copy .lede {
+    font-style: italic;
+    color: var(--charcoal);
+    font-size: 1.15rem;
+  }
+
+  /* ─── Shop ─────────────────────────────── */
+  .candle-switcher {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 5vw;
+    align-items: start;
+  }
+
+  .candle-switcher-media {
+    position: sticky;
+    top: 100px;
+    max-width: 420px;
+  }
+  .candle-switcher-media .frame {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px -28px rgba(37, 41, 28, 0.3);
+  }
+  .candle-switcher-media img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .candle-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.8rem;
+    border-bottom: 1px solid rgba(37, 41, 28, 0.14);
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+  }
+  .candle-tab {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    background: none;
+    border: none;
+    padding: 0.2rem 0;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .candle-tab:hover { color: var(--text); }
+  .candle-tab.active {
+    color: var(--wine);
+    font-style: italic;
+  }
+
+  .candle-name {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .candle-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .candle-tags .tag {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--steel);
+    border-radius: 999px;
+    color: var(--text-light);
+  }
+
+  .candle-desc {
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    max-width: 48ch;
+  }
+
+  .candle-ingredients {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 1.8rem;
+    max-width: 48ch;
+  }
+  .candle-ingredients .ingredients-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 0.35rem;
+  }
+
+  #shopifySlots { max-width: 400px; }
+  .shopify-slot { display: none; }
+  .shopify-slot.active { display: block; }
+
+  .shopify-slot {
+    border: 1px dashed var(--steel);
+    border-radius: 6px;
+    padding: 1.6rem 1.2rem;
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+  }
+  .shopify-slot .slot-label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+  .shopify-slot .slot-note {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--text-light);
+    max-width: 30ch;
+    margin: 0 auto;
+  }
+
+  /* ─── Contact ─────────────────────────────── */
+  .contact .wrap {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 6vw;
+  }
+
+  .contact-intro .eyebrow { display: block; margin-bottom: 0.9rem; }
+  .contact-intro h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1.1rem;
+  }
+  .contact-intro p {
+    color: var(--text-light);
+    margin-bottom: 1.6rem;
+    max-width: 40ch;
+  }
+  .contact-email {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--wine);
+    display: inline-block;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+  .contact-email:hover, .contact-email:focus-visible {
+    border-color: var(--wine);
+  }
+
+  .made-in {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  form.contact-form {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  .field label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.55rem;
+  }
+  .field input,
+  .field textarea {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(37, 41, 28, 0.3);
+    padding: 0.5rem 0.1rem;
+    transition: border-color 0.2s ease;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--wine);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+
+  .form-note {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  /* ─── Footer ─────────────────────────────── */
+  footer {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 3rem 0 2.2rem;
+  }
+  footer .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.1rem;
+  }
+  footer .footer-sprig { width: 34px; opacity: 0.75; filter: brightness(1.4); }
+  footer .footer-word {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+  footer .footer-fine {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    color: rgba(239,233,210,0.6);
+  }
+
+  /* ─── Responsive ─────────────────────────────── */
+  @media (max-width: 880px) {
+    .hero .wrap,
+    .about .wrap,
+    .contact .wrap,
+    .candle-switcher {
+      grid-template-columns: 1fr;
+    }
+    .candle-switcher-media {
+      position: static;
+      max-width: 340px;
+      margin: 0 auto 2rem;
+    }
+    .hero-visual { order: -1; }
+    .hero { padding-top: 3rem; }
+    .about-media .sprig { display: none; }
+    .hero-visual .sprig { width: 90px; top: -26px; right: -10px; }
+    .section { padding: 3.6rem 0; }
+    .section-head h2 { font-size: 2rem; }
+  }
+
+  @media (max-width: 700px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(37,41,28,0.12);
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+      padding: 1.8rem 0 2.2rem;
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: flex; }
+    .nav-sprig { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16.5px; }
+    .hero-tagline { font-size: 1.12rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── Nav ─────────────────────────────── -->
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="#top" class="nav-logo" aria-label="Salutar Australia home">
+      <img src="images/logo.webp" alt="Salutar Australia">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <span class="nav-sprig" aria-hidden="true"><img src="images/sprig.webp" alt=""></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── Hero ─────────────────────────────── -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <img src="images/logo.webp" alt="Salutar Australia" class="hero-logo">
+      <span class="eyebrow">Natural Soy Wax · Hand Poured</span>
+      <p class="hero-tagline">A single candle, made with quiet intention — natural soy wax, cotton wicks, and scents drawn from the Australian bush.</p>
+      <a href="#shop" class="btn primary">Shop the Candle</a>
+    </div>
+    <div class="hero-visual">
+      <div class="frame">
+        <img src="images/candle.webp" alt="A lit Salutar Australia soy candle in a glass vessel with silver lid, set against soft linen." class="candle">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── About ─────────────────────────────── -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="about-media">
+      <div class="frame">
+        <img src="images/about.webp" alt="Two Salutar Australia candles, one lit, standing together on natural linen.">
+      </div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">About Salutar</span>
+      <h2>Slow, natural, unmistakably Australian.</h2>
+      <p class="lede">Salutar began with one simple belief — that a candle should be honest.</p>
+      <p>No synthetic fillers, no shortcuts. Just natural soy wax, cotton wicks, and fragrance oils chosen for the way they sit quietly in a room rather than shout across it.</p>
+      <p>Every candle is hand poured in small batches in Melbourne, inspired by the native plants, coastlines and quiet corners of the Australian landscape.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Shop ─────────────────────────────── -->
+<section class="section shop" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Collection</span>
+      <h2>Six Candles, Six Moods</h2>
+      <p>Each one hand poured in small batches in Melbourne, with its own blend of natural fragrance oils.</p>
+    </div>
+
+    <!--
+      SHOPIFY BUY BUTTONS — each candle is its own Shopify product, so it
+      gets its own .shopify-slot placeholder inside #shopifySlots below.
+      The script near the end of this file shows/hides the right one as
+      the visitor clicks between candles. For each candle: Shopify Admin →
+      Sales Channels → Buy Button → select that product → Generate code.
+      Replace that candle's .shopify-slot CONTENTS with the
+      <div id="product-component-..."></div> and <script> block Shopify
+      gives you — keep the outer <div class="shopify-slot" id="shopify-buy-button-...">
+      wrapper and its id exactly as-is so the show/hide script keeps working.
+    -->
+    <div class="candle-switcher">
+      <div class="candle-switcher-media">
+        <div class="frame">
+          <img id="candleImage" src="images/candle.webp" alt="Blue Mountains soy candle">
+        </div>
+      </div>
+
+      <div class="candle-switcher-panel">
+        <div class="candle-list" role="tablist" aria-label="Choose a candle">
+          <button type="button" class="candle-tab active" data-candle="repose" role="tab" aria-selected="true">Blue Mountains</button>
+          <button type="button" class="candle-tab" data-candle="solace" role="tab" aria-selected="false">The Otways</button>
+          <button type="button" class="candle-tab" data-candle="longing" role="tab" aria-selected="false">Margaret River</button>
+          <button type="button" class="candle-tab" data-candle="reverie" role="tab" aria-selected="false">The Daintree</button>
+          <button type="button" class="candle-tab" data-candle="elation" role="tab" aria-selected="false">Hyams Beach</button>
+          <button type="button" class="candle-tab" data-candle="clarity" role="tab" aria-selected="false">The Flinders Ranges</button>
+        </div>
+
+        <div class="candle-detail">
+          <h3 class="candle-name" id="candleName">Blue Mountains</h3>
+          <div class="candle-tags" id="candleTags">
+            <span class="tag">Herbal</span><span class="tag">Soft</span><span class="tag">Green</span>
+          </div>
+          <p class="candle-desc" id="candleDesc">In a world that rarely slows down, take a moment to pause. A beautifully balanced blend created to accompany your quiet moments and turn an ordinary evening into a calming ritual.</p>
+          <p class="candle-ingredients" id="candleIngredients"><span class="ingredients-label">Ingredients</span> Lavender Oil, Patchouli Leaf Oil, Mandarin Oil, Marjoram Oil, Jojoba Oil, Geranium Bourbon Oil, Chamomile Roman Oil.</p>
+
+          <div id="shopifySlots">
+            <div class="shopify-slot active" id="shopify-buy-button-repose">
+              <div class="slot-label">Shopify Buy Button</div>
+              <p class="slot-note">Checkout for Blue Mountains will appear here once its Buy Button embed code is added.</p>
+            </div>
+            <div class="shopify-slot" id="shopify-buy-button-solace">
+              <div class="slot-label">Shopify Buy Button</div>
+              <p class="slot-note">Checkout for The Otways will appear here once its Buy Button embed code is added.</p>
+            </div>
+            <div class="shopify-slot" id="shopify-buy-button-longing">
+              <div class="slot-label">Shopify Buy Button</div>
+              <p class="slot-note">Checkout for Margaret River will appear here once its Buy Button embed code is added.</p>
+            </div>
+            <div class="shopify-slot" id="shopify-buy-button-reverie">
+              <div class="slot-label">Shopify Buy Button</div>
+              <p class="slot-note">Checkout for The Daintree will appear here once its Buy Button embed code is added.</p>
+            </div>
+            <div class="shopify-slot" id="shopify-buy-button-elation">
+              <div class="slot-label">Shopify Buy Button</div>
+              <p class="slot-note">Checkout for Hyams Beach will appear here once its Buy Button embed code is added.</p>
+            </div>
+            <div class="shopify-slot" id="shopify-buy-button-clarity">
+              <div class="slot-label">Shopify Buy Button</div>
+              <p class="slot-note">Checkout for The Flinders Ranges will appear here once its Buy Button embed code is added.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ─────────────────────────────── -->
+<section class="section alt contact" id="contact">
+  <div class="wrap">
+    <div class="contact-intro">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Contact Us</h2>
+      <p>Questions about an order, wholesale, or just want to say hello — we'd love to hear from you.</p>
+      <a href="mailto:hello@salutaraustralia.com.au" class="contact-email">hello@salutaraustralia.com.au</a>
+      <div class="made-in">
+        Made in Melbourne, Australia
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn primary">Send Message</button>
+      </div>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ─── Footer ─────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-sprig" aria-hidden="true"><img src="images/sprig.webp" alt=""></div>
+    <div class="footer-word">Salutar Australia</div>
+    <div class="footer-fine">&copy; <span id="year"></span> Salutar Australia · Made in Melbourne · hello@salutaraustralia.com.au</div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // candle switcher
+  const candles = {
+    repose: {
+      name: "Blue Mountains",
+      tags: ["Herbal", "Soft", "Green"],
+      desc: "In a world that rarely slows down, take a moment to pause. A beautifully balanced blend created to accompany your quiet moments and turn an ordinary evening into a calming ritual.",
+      ingredients: "Lavender Oil, Patchouli Leaf Oil, Mandarin Oil, Marjoram Oil, Jojoba Oil, Geranium Bourbon Oil, Chamomile Roman Oil.",
+      image: "images/candle.webp",
+      imageAlt: "Blue Mountains soy candle"
+    },
+    solace: {
+      name: "The Otways",
+      tags: ["Herbaceous", "Resinous", "Woody"],
+      desc: "A gentle invitation to slow down. Soft, soothing notes unfold into a beautifully balanced fragrance, creating an atmosphere of warmth, stillness and quiet comfort.",
+      ingredients: "Lavender Oil, Ylang Ylang Oil, Frankincense Oil, Cedarwood Oil.",
+      image: "images/candle.webp",
+      imageAlt: "The Otways soy candle"
+    },
+    longing: {
+      name: "Margaret River",
+      tags: ["Floral", "Warm", "Musky"],
+      desc: "A fragrance created for moments that feel a little more special. Soft, sensual notes unfold into a beautifully balanced scent, creating a warm and intimate atmosphere.",
+      ingredients: "Lavender Oil, Orange Sweet Oil, Patchouli Leaf Oil, Ylang Ylang Oil, Cedarwood Oil, Jojoba Oil, Jasminum Grandiflorum Flower Extract.",
+      image: "images/candle.webp",
+      imageAlt: "Margaret River soy candle"
+    },
+    reverie: {
+      name: "The Daintree",
+      tags: ["Spiced", "Woody", "Floral"],
+      desc: "A bright, uplifting fragrance for the free spirit. A scent inspired by open roads, new places and the excitement of discovering something unexpected.",
+      ingredients: "Orange Sweet Oil, Ylang Ylang Oil, Cardamom Oil, Patchouli Leaf Oil, Clove Bud Oil, Bergamot Oil, Jasminum Sambac Flower Extract, Sandalwood Oil, Rosa Damascena Flower Oil.",
+      image: "images/candle.webp",
+      imageAlt: "The Daintree soy candle"
+    },
+    elation: {
+      name: "Hyams Beach",
+      tags: ["Citrusy", "Bright", "Floral"],
+      desc: "A joyful, uplifting fragrance created to fill your space with warmth, freshness and a sense of optimism. Light it when you want to celebrate the little things, lift your spirits and bring a little more sunshine into your day.",
+      ingredients: "Rose Geranium Oil, Mandarin Cold Pressed Oil, Bergamot Oil, Jojoba Oil, Neroli Premium Oil.",
+      image: "images/candle.webp",
+      imageAlt: "Hyams Beach soy candle"
+    },
+    clarity: {
+      name: "The Flinders Ranges",
+      tags: ["Earthy", "Resinous", "Herbal"],
+      desc: "A grounding blend for moments of stillness and presence. Created to accompany your meditation ritual and bring a sense of calm, warmth and quiet into your space.",
+      ingredients: "Orange Sweet Oil, Patchouli Leaf Oil, Frankincense Oil, Clary Sage Oil, Ylang Ylang Oil, Thyme Red Oil.",
+      image: "images/candle.webp",
+      imageAlt: "The Flinders Ranges soy candle"
+    }
+  };
+
+  const candleImage = document.getElementById('candleImage');
+  const candleName = document.getElementById('candleName');
+  const candleTags = document.getElementById('candleTags');
+  const candleDesc = document.getElementById('candleDesc');
+  const candleIngredients = document.getElementById('candleIngredients');
+
+  function switchCandle(key) {
+    const c = candles[key];
+    if (!c) return;
+
+    candleImage.src = c.image;
+    candleImage.alt = c.imageAlt;
+    candleName.textContent = c.name;
+    candleTags.innerHTML = c.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    candleDesc.textContent = c.desc;
+    candleIngredients.innerHTML = `<span class="ingredients-label">Ingredients</span> ${c.ingredients}`;
+
+    document.querySelectorAll('.candle-tab').forEach(tab => {
+      const isActive = tab.dataset.candle === key;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive);
+    });
+
+    document.querySelectorAll('.shopify-slot').forEach(slot => {
+      slot.classList.toggle('active', slot.id === `shopify-buy-button-${key}`);
+    });
+  }
+
+  document.querySelectorAll('.candle-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchCandle(tab.dataset.candle));
+  });
+
+  // contact form -> mailto (no backend yet)
+  const form = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const subject = encodeURIComponent(`Website enquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:hello@salutaraustralia.com.au?subject=${subject}&body=${body}`;
+    formNote.textContent = "Opening your email app to send this message…";
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
